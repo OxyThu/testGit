@@ -1,3 +1,3 @@
 # testGit
 
-#test Git hub with simple html & CSS
+#test Git  with simple html & CSS
