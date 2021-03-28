@@ -95,7 +95,8 @@
         </div>
     </div>
     <hr>
-    <div class="row my-5 gx-5 gy-5">
+
+    <div class="row my-5 gx-5 gy-5" id="pc">
         <div class="col-12 col-sm-6 col-md-4 col-lg-3">
             <div class="card">
                 <div class="card-header">
@@ -121,84 +122,87 @@
         
             </div>
         </div>
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-            <div class="card">
-                <div class="card-header">
-                    <strong>Sa Yar Gyi</strong><br>
-                    <small>Master Committee</small>
-                </div>
-                <div class="card-body">
-                    <div class="card-photo">
-                        <img src="/asset/photo/pwBlack.jpg" alt="PowerRangerBlack" class="photoOfMembers">
-                    </div>
-                    <hr>
-                    <div class="card-info">
-                        <i class="fas fa-person-booth"></i>
-                        <span>David Min Aung Hlaing</span><br>
-                        <i class="fas fa-book-reader"></i>
-                        <span>KG class</span><br>
-                        <i class="fas fa-phone"></i>
-                        <span>099919919</span><br>
-                        <i class="fas fa-mail-bulk"></i>
-                        <span>minaunghlaing@gmail.com</span>
-                    </div>    
-                </div>
-        
-            </div>
-        </div>
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-            <div class="card">
-                <div class="card-header">
-                    <strong>Sa Yar Gyi</strong><br>
-                    <small>Master Committee</small>
-                </div>
-                <div class="card-body">
-                    <div class="card-photo">
-                        <img src="/asset/photo/pwBlack.jpg" alt="PowerRangerBlack" class="photoOfMembers">
-                    </div>
-                    <hr>
-                    <div class="card-info">
-                        <i class="fas fa-person-booth"></i>
-                        <span>David Min Aung Hlaing</span><br>
-                        <i class="fas fa-book-reader"></i>
-                        <span>KG class</span><br>
-                        <i class="fas fa-phone"></i>
-                        <span>099919919</span><br>
-                        <i class="fas fa-mail-bulk"></i>
-                        <span>minaunghlaing@gmail.com</span>
-                    </div>    
-                </div>
-        
-            </div>
-        </div>
-       
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-            <div class="card">
-                <div class="card-header">
-                    <strong>Sa Yar Gyi</strong><br>
-                    <small>Master Committee</small>
-                </div>
-                <div class="card-body">
-                    <div class="card-photo">
-                        <img src="/asset/photo/pwBlack.jpg" alt="PowerRangerBlack" class="photoOfMembers">
-                    </div>
-                    <hr>
-                    <div class="card-info">
-                        <i class="fas fa-person-booth"></i>
-                        <span>David Min Aung Hlaing</span><br>
-                        <i class="fas fa-book-reader"></i>
-                        <span>KG class</span><br>
-                        <i class="fas fa-phone"></i>
-                        <span>099919919</span><br>
-                        <i class="fas fa-mail-bulk"></i>
-                        <span>minaunghlaing@gmail.com</span>
-                    </div>    
-                </div>
-        
-            </div>
-        </div>
+
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" ></script>
+    <script src="asset/js/memberInfo.js"></script>
+    <script>
 
+    // Create Card Element for Member Profile With JS
+        let mainDiv=document.createElement("div");
+        let card=document.createElement("div");
+        let cardHeader=document.createElement("div");
+        let cardBody=document.createElement("div");
+        let cardPhoto=document.createElement("div");
+        let cardInfo=document.createElement("div");
+
+        mainDiv.classList.add("col-12","col-sm-6","col-md-4","col-lg-3");
+        card.classList.add("card");
+        cardHeader.classList.add("card-header");
+        cardBody.classList.add("card-body");
+        cardPhoto.classList.add("card-photo");
+        cardInfo.classList.add("card-info");
+
+        let position=document.createElement("strong");
+        let comm=document.createElement("small");
+
+        let photo=document.createElement("img");
+        photo.classList.add("photoOfMembers");
+
+        let personIcon=document.createElement("i");
+        let classIcon=document.createElement("i");
+        let phoneIcon=document.createElement("i");
+        let mailIcon=document.createElement("i");
+
+        personIcon.classList.add("fas","fa-person-booth");
+        classIcon.classList.add("fas","fa-book-reader");
+        phoneIcon.classList.add("fas","fa-phone");
+        mailIcon.classList.add("fas","fa-envelope-square");
+
+        let nameSpan=document.createElement("span");
+        let classSpan=document.createElement("span");
+        let phoneSpan=document.createElement("span");
+        let mailSpan=document.createElement("span");
+
+        
+        let main=document.querySelector("#pc");
+
+
+        main.appendChild(mainDiv);
+            mainDiv.appendChild(card);
+                card.appendChild(cardHeader);
+                    cardHeader.appendChild(position);
+                        position.textContent="President"
+                    cardHeader.appendChild(document.createElement('br'));
+                    cardHeader.appendChild(comm);
+                        comm.textContent="CEC"
+                card.appendChild(cardBody);
+                    cardBody.appendChild(cardPhoto);
+                        cardPhoto.appendChild(photo);
+                            photo.setAttribute("src","/asset/photo/pwBlack.jpg");
+                    cardBody.appendChild(document.createElement('hr'));
+                    cardBody.appendChild(cardInfo);
+                        cardInfo.appendChild(personIcon);
+                        cardInfo.appendChild(nameSpan);
+                            nameSpan.textContent="Aung Si Thu";
+
+                        cardInfo.appendChild(document.createElement('br'));
+
+                        cardInfo.appendChild(classIcon);
+                        cardInfo.appendChild(classSpan);
+                            classSpan.textContent="Third Year";
+
+                        cardInfo.appendChild(document.createElement('br'));
+
+                        cardInfo.appendChild(phoneIcon);
+                        cardInfo.appendChild(phoneSpan);
+                            phoneSpan.textContent="09-428634653";
+
+                        cardInfo.appendChild(document.createElement('br'));
+
+                        cardInfo.appendChild(mailIcon);
+                        cardInfo.appendChild(mailSpan);
+                            mailSpan.textContent="aungsithu@ucssittway.edu.mm";
+    </script>
 </body>
 </html>
