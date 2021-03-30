@@ -1,34 +1,30 @@
-var member=[{
-        "position":"President",
-        "name":"Aung Si Thu",
-        "committee":"CEC",
+let member=[{
+        "position":"FOLLOWER",
+        "name":"David Thein Soe",
+        "committee":"COUP",
         "photo":"",
-        "class":"Third Year",
-        "phone":"09-428634653",
-        "mail":"aungsithu@ucssittway.edu.mm",
+        "class":"KG",
+        "phone":"199",
+        "mail":"lover@gmail.com",
         },
         {
-        "position":"Co-President",
-        "name":"U Lwin Myint",
-        "committee":"CEC",
+        "position":"SECURITY",
+        "name":"THET THET",
+        "committee":"COUP",
         "photo":"",
-        "class":"Second Year ",
-        "phone":"09-428634653",
-        "mail":"aungsithu@ucssittway.edu.mm",
+        "class":"GRADE 4",
+        "phone":"199",
+        "mail":"farrr@gmail.com",
         },
         {
-        "position":"Secretary",
-        "name":"Min Soe Hlaing",
-        "committee":"CEC",
+        "position":"DRIVER",
+        "name":"AYE NAY",
+        "committee":"EMPTY",
         "photo":"",
-        "class":"Second Year ",
-        "phone":"09-428634653",
-        "mail":"aungsithu@ucssittway.edu.mm",
+        "class":"KG",
+        "phone":"__",
+        "mail":"needears@gmail.com",
         }
     ]
 
-    console.log(member.length);
-    console.log(member[0]);
-    
-    var filter=member.filter(f=>f.committee=="CEC");
-    console.log(filter);
+  

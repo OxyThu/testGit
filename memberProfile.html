@@ -26,22 +26,19 @@
                         <a href="#" class="dropdown-item">ALL</a>
                     </li>
                     <li>
-                        <a href="#" class="dropdown-item">CEC</a>
-                    </li>
-                    <li>
                         <a href="#" class="dropdown-item">First Commettee</a>
                     </li>
                     <li>
                         <a href="#" class="dropdown-item">Second Commettee</a>
                     </li>
                     <li>
-                        <a href="#" class="dropdown-item">Third Commettee</a>
+                        <a href="#" class="dropdown-item" >Third Commettee</a>
                     </li>
                     <li>
                         <a href="#" class="dropdown-item">Fourth Commettee</a>
                     </li>
                     <li>
-                        <a href="#" class="dropdown-item">Fifith Commettee</a>
+                        <a href="#" class="dropdown-item" >Fifith Commettee</a>
                     </li>
                 </ul>
             </li>
@@ -127,82 +124,85 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" ></script>
     <script src="asset/js/memberInfo.js"></script>
     <script>
+    
+          // Create Card Element for Member Profile With JS
+        for(let x=0;x<member.length;x++){
+            let mainDiv=document.createElement("div");
+            let card=document.createElement("div");
+            let cardHeader=document.createElement("div");
+            let cardBody=document.createElement("div");
+            let cardPhoto=document.createElement("div");
+            let cardInfo=document.createElement("div");
 
-    // Create Card Element for Member Profile With JS
-        let mainDiv=document.createElement("div");
-        let card=document.createElement("div");
-        let cardHeader=document.createElement("div");
-        let cardBody=document.createElement("div");
-        let cardPhoto=document.createElement("div");
-        let cardInfo=document.createElement("div");
+            mainDiv.classList.add("col-12","col-sm-6","col-md-4","col-lg-3");
+            card.classList.add("card");
+            cardHeader.classList.add("card-header");
+            cardBody.classList.add("card-body");
+            cardPhoto.classList.add("card-photo");
+            cardInfo.classList.add("card-info");
 
-        mainDiv.classList.add("col-12","col-sm-6","col-md-4","col-lg-3");
-        card.classList.add("card");
-        cardHeader.classList.add("card-header");
-        cardBody.classList.add("card-body");
-        cardPhoto.classList.add("card-photo");
-        cardInfo.classList.add("card-info");
+            let position=document.createElement("strong");
+            let comm=document.createElement("small");
 
-        let position=document.createElement("strong");
-        let comm=document.createElement("small");
+            let photo=document.createElement("img");
+            photo.classList.add("photoOfMembers");
 
-        let photo=document.createElement("img");
-        photo.classList.add("photoOfMembers");
+            let personIcon=document.createElement("i");
+            let classIcon=document.createElement("i");
+            let phoneIcon=document.createElement("i");
+            let mailIcon=document.createElement("i");
 
-        let personIcon=document.createElement("i");
-        let classIcon=document.createElement("i");
-        let phoneIcon=document.createElement("i");
-        let mailIcon=document.createElement("i");
+            personIcon.classList.add("fas","fa-person-booth");
+            classIcon.classList.add("fas","fa-book-reader");
+            phoneIcon.classList.add("fas","fa-phone");
+            mailIcon.classList.add("fas","fa-envelope-square");
 
-        personIcon.classList.add("fas","fa-person-booth");
-        classIcon.classList.add("fas","fa-book-reader");
-        phoneIcon.classList.add("fas","fa-phone");
-        mailIcon.classList.add("fas","fa-envelope-square");
-
-        let nameSpan=document.createElement("span");
-        let classSpan=document.createElement("span");
-        let phoneSpan=document.createElement("span");
-        let mailSpan=document.createElement("span");
+            let nameSpan=document.createElement("span");
+            let classSpan=document.createElement("span");
+            let phoneSpan=document.createElement("span");
+            let mailSpan=document.createElement("span");
 
         
-        let main=document.querySelector("#pc");
+            let main=document.querySelector("#pc");
 
-
-        main.appendChild(mainDiv);
+        
+            main.appendChild(mainDiv);
             mainDiv.appendChild(card);
                 card.appendChild(cardHeader);
                     cardHeader.appendChild(position);
-                        position.textContent="President"
+                        position.textContent=member[x].position;
                     cardHeader.appendChild(document.createElement('br'));
                     cardHeader.appendChild(comm);
-                        comm.textContent="CEC"
+                        comm.textContent=member[x].committee;
                 card.appendChild(cardBody);
                     cardBody.appendChild(cardPhoto);
                         cardPhoto.appendChild(photo);
-                            photo.setAttribute("src","/asset/photo/pwBlack.jpg");
+                            photo.setAttribute("src",member[x].photo);
                     cardBody.appendChild(document.createElement('hr'));
                     cardBody.appendChild(cardInfo);
                         cardInfo.appendChild(personIcon);
                         cardInfo.appendChild(nameSpan);
-                            nameSpan.textContent="Aung Si Thu";
+                            nameSpan.textContent=member[x].name;
 
                         cardInfo.appendChild(document.createElement('br'));
 
                         cardInfo.appendChild(classIcon);
                         cardInfo.appendChild(classSpan);
-                            classSpan.textContent="Third Year";
+                            classSpan.textContent=member[x].class;
 
                         cardInfo.appendChild(document.createElement('br'));
 
                         cardInfo.appendChild(phoneIcon);
                         cardInfo.appendChild(phoneSpan);
-                            phoneSpan.textContent="09-428634653";
+                            phoneSpan.textContent=member[x].phone;
 
                         cardInfo.appendChild(document.createElement('br'));
 
                         cardInfo.appendChild(mailIcon);
                         cardInfo.appendChild(mailSpan);
-                            mailSpan.textContent="aungsithu@ucssittway.edu.mm";
-    </script>
+                            mailSpan.textContent=member[x].mail;
+        }     
+     
+</script>
 </body>
 </html>
